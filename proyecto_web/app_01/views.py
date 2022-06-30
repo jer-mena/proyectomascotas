@@ -16,6 +16,25 @@ from django.contrib import messages
 def home(request):
     
     return render(request, 'social/home.html')
+
+def index(request):
+    
+    return render(request, 'social/index.html')
+
+def registro(request):
+    
+    return render(request, 'social/registro.html')
+
+def somos(request):
+    
+    return render(request, 'social/somos.html')
+
+def tienda(request):
+    
+    return render(request, 'social/tienda.html')
+def contactanos(request):
+    
+    return render(request, 'social/contactanos.html')
 # Create your views here.
 
 

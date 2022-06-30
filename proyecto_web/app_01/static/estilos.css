@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+
+    font-family: 'Nerko One', cursive;
+}
+
+.logotipo{
+    width: 75px;
+}
+
+.icono_rs{
+    width: 20px;
+    margin: 10px 5px;
+}
+.bannerimg{
+    width: 250px;
+}
+
+.banner-video{
+    background-image: url('C:/Users/jerme/Desktop/proyectofinal/img/vid3.jpg');
+    padding: 200px 0;
+    position: relative;
+    text-align: center;
+}
+.banner-video img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.altura-a-b{
+    padding: 100px;
+}
+footer{
+    background-color: black;
+    padding: 50px 0;
+    text-align: center;
+}
+footer p{
+    color: #fff;
+}
+
+
+
+.form_input{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: .8em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #bbb0b0;
+    border-radius: 0.2em;
+}
+.form_input--message{
+    resize: none;
+    padding: 1.8em 1em;
+    margin-bottom: 1.5em;
+}
+  
+.form_cta{
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #089FE0;
+    color: #fff;
+    border: none;
+    font-weight: 300;
+    padding: .7em 0;
+    border-radius: .2em;
+    cursor: pointer;
+    font-weight: 700;
+}
+  
+.form{
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    border-width: 1em;
+    padding: 3.5em 1.5em;
+}
+  
+.form_container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+}
+  
+.form_title{
+    text-align:  center;
+    font-size: 1.9rem;
+    margin-bottom: .4em;
+}
+
+.carousel-caption{
+    text-shadow: #089FE0;
+}
+h5 {
+    color: black;
+}
+
+p {
+    color: black;
+}
