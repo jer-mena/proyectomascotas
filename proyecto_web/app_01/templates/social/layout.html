@@ -1,0 +1,84 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+
+    <title>Panificadora</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales-all.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    {% block extra_css %}
+
+    {% endblock extra_css %}
+  </head>
+  <body class="container">
+    <header class="main-head">
+        <nav class="main">
+            <a class="logo">
+            </a>
+            <ul>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="notification {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <!-------------------
+          Navigation Bar
+          Al hacer clic en el botón Registrarse, 
+          se generará la solicitud POST y crearemos el nuevo Usuario.
+          El usuario recién creado que use UserCreationForm()
+          establecerá is_superuser y is_staff como False pero is_active establecerá en True.
+          UserCreationForm() proporciona los campos limitados.
+          Supongamos que queremos enviar el correo de verificación para verificar al Usuario;
+          no podemos hacer eso porque no tiene un campo de correo electrónico.
+          Un formulario de registro de usuario adecuado debe seguir los siguientes pasos.
+    --------------------->
+    <div class="main">
+        <nav class="second-nav">
+            <a class="feed" href="#">Inicio</a>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+
+    </div>
+
+    <footer>
+        <div class="row">
+            <p>
+                Panaderia Tony Stark
+            </p>
+        </div>
+    </footer>
+    {% block extrajs %}
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    {% endblock extrajs %}
+  </body>
+</html>
